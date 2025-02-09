@@ -63,6 +63,7 @@
             // Get the values from the form
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+            const product = document.getElementById('product').value;
 
             if (!name || !email) {
                 alert('Please enter both your name and email.');
@@ -73,7 +74,7 @@
             fbq('track', 'AddToCart', {
                 content_name: 'Test Product',
                 content_category: 'Example Category',
-                content_ids: ['1234'],
+                content_ids: [product],
                 content_type: 'product',
                 value: 50.00,
                 currency: 'USD',
