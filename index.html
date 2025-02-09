@@ -41,9 +41,20 @@
         <label for="phone">Phone Number:</label>
         <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
 
+        <label for="product">Product SKU:</label>        
+        <select name="product" id="product">
+          <option value="productA">Product A</option>
+          <option value="productB">Product B</option>
+          <option value="productC">Product C</option>
+          <option value="productD">Product D</option>
+        </select>
+
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
+
+        
         <button type="button" id="addToCartButton">Add to Cart</button>
 
-        <button type="button" id="addToWishlistButton">Add to Wishlist</button>
+        <button type="button" id="purchase">Purchase</button>
     </form>
 
     <!-- JavaScript to trigger the addToCart event -->
@@ -69,6 +80,31 @@
                 user_name: name
             });
         });
+
+        document.getElementById('purchase').addEventListener('click', function() {
+            // Get the values from the form
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const product = document.getElementById('product').value;
+
+            if (!name || !email) {
+                alert('Please enter both your name and email.');
+                return;
+            }
+
+            // Trigger Facebook Pixel AddToCart event with user data
+            fbq('track', 'Purchase', {
+                content_name: 'Test Product',
+                content_category: 'Example Category',
+                content_ids: [product],
+                content_type: 'product',
+                value: 50.00,
+                currency: 'USD',
+                user_name: name
+            });
+        });
+        
+        
     </script>
 </body>
 </html>
