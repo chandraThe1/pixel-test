@@ -103,8 +103,19 @@
                 currency: 'USD',
                 user_name: name
             });
-        });
-        
+
+            //Custom Event
+            fbq('track', 'OrderCreated', {
+                content_name: 'Test Product',
+                content_category: 'Example Category',
+                content_ids: [product],
+                content_type: 'product',
+                value: 50.00,
+                currency: 'USD',
+                order_id: '1122334455',
+                user_name: name
+            });            
+        });        
         
     </script>
 </body>
