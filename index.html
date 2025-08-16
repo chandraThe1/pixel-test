@@ -20,6 +20,9 @@
             autoConfig: true,
             em: true // Enables automatic advanced matching for email, phone, and other fields
         }); 
+
+        console.log("loading complete and sending PageView event");
+
         fbq('track', 'PageView');
     </script>
     <noscript>
@@ -80,6 +83,7 @@
         });
 
         document.getElementById('purchase').addEventListener('click', function() {
+            console.log("purchase clicked");
             // Get the values from the form
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
@@ -89,6 +93,7 @@
                 alert('Please enter both your name and email.');
                 return;
             }
+            console.log("sending Purchase event");
 
             // Trigger Facebook Pixel AddToCart event with user data
             fbq('track', 'Purchase', {
