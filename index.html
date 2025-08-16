@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- IMG Tag Pixel Integration -->    
-    <title>Facebook Pixel Add to Cart with Form</title>
+    <title>Facebook Pixel Test</title>
     <!-- Meta Pixel Code -->
     <script>
+    console.log("Inside script head tag");
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -15,16 +16,21 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
+    
+    console.log("Setting fbq params");
+    fbq('set', 'autoConfig', false, 'FB_PIXEL_ID'); 
     fbq('init', '36402296501972');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
+    <noscript>
+<!--         <img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=36402296501972&ev=PageView&noscript=1"
-    /></noscript>
+    />
+    </noscript> -->
     <!-- End Meta Pixel Code -->
 </head>
 <body>
-    <h1>Facebook Pixel Add to Cart Test</h1>
+    <h1>Facebook Pixel Test</h1>
 
     <!-- Form to collect Name and Email -->
     <form id="userDetailsForm">
@@ -39,42 +45,17 @@
 
         <label for="product">Product SKU:</label>        
         <select name="product" id="product">
-          <option value="productA">AUTO</option>
+          <option value="AUTO">AUTO</option>
           <option value="productB">Product B</option>
           <option value="productC">Product C</option>
           <option value="productD">Product D</option>
         </select>
         
-        <button type="button" id="addToCartButton">Add to Cart</button>
-
         <button type="button" id="purchase">Purchase</button>
     </form>
 
     <!-- JavaScript to trigger the addToCart event -->
     <script>
-        document.getElementById('addToCartButton').addEventListener('click', function() {
-            // Get the values from the form
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const product = document.getElementById('product').value;
-
-            if (!name || !email) {
-                alert('Please enter both your name and email.');
-                return;
-            }
-
-            // Trigger Facebook Pixel AddToCart event with user data
-            fbq('track', 'AddToCart', {
-                content_name: 'Test Product',
-                content_category: 'Example Category',
-                content_ids: [product],
-                content_type: 'product',
-                value: 50.00,
-                currency: 'USD',
-                user_name: name
-            });
-        });
-
         document.getElementById('purchase').addEventListener('click', function() {
             console.log("purchase clicked");
             // Get the values from the form
@@ -86,7 +67,8 @@
                 alert('Please enter both your name and email.');
                 return;
             }
-            console.log("sending Purchase event");
+            
+            console.log("Sending Purchase event");
 
             // Trigger Facebook Pixel AddToCart event with user data
             fbq('track', 'Purchase', {
