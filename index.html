@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- IMG Tag Pixel Integration -->
-    <img src="https://www.facebook.com/tr?id=36802306527037&ev=PageView&noscript=1" />
-    <title>Facebook Pixel Add to Cart with Form</title>
+    
+<!--     <img src="https://www.facebook.com/tr?id=36802306527037&ev=PageView&noscript=1" />
+    <title>Facebook Pixel Add to Cart with Form</title> -->
     <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -16,7 +17,7 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window,document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '36802306527037', {
+        fbq('init', '36402296501972', {
             autoConfig: true,
             em: true // Enables automatic advanced matching for email, phone, and other fields
         }); 
@@ -24,7 +25,7 @@
     </script>
     <noscript>
         <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=36802306527037&ev=PageView&noscript=1"/>
+        src="https://www.facebook.com/tr?id=36402296501972&ev=PageView&noscript=1"/>
     </noscript>
 </head>
 <body>
@@ -43,7 +44,7 @@
 
         <label for="product">Product SKU:</label>        
         <select name="product" id="product">
-          <option value="productA">Product A</option>
+          <option value="productA">AUTO</option>
           <option value="productB">Product B</option>
           <option value="productC">Product C</option>
           <option value="productD">Product D</option>
@@ -95,26 +96,23 @@
 
             // Trigger Facebook Pixel AddToCart event with user data
             fbq('track', 'Purchase', {
-                content_name: 'Test Product',
-                content_category: 'Example Category',
                 content_ids: [product],
-                content_type: 'product',
                 value: 50.00,
                 currency: 'USD',
                 user_name: name
             });
 
-            //Custom Event
-            fbq('track', 'OrderCreated', {
-                content_name: 'Test Product',
-                content_category: 'Example Category',
-                content_ids: [product],
-                content_type: 'product',
-                value: 50.00,
-                currency: 'USD',
-                order_id: '1122334455',
-                user_name: name
-            });            
+            // //Custom Event
+            // fbq('track', 'OrderCreated', {
+            //     content_name: 'Test Product',
+            //     content_category: 'Example Category',
+            //     content_ids: [product],
+            //     content_type: 'product',
+            //     value: 50.00,
+            //     currency: 'USD',
+            //     order_id: '1122334455',
+            //     user_name: name
+            // });            
         });        
         
     </script>
