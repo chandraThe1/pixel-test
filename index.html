@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- IMG Tag Pixel Integration -->
-    
+    <!-- IMG Tag Pixel Integration -->    
     <img src="https://www.facebook.com/tr?id=36402296501972&ev=PageView&noscript=1" />
     <title>Facebook Pixel Add to Cart with Form</title>
     <!-- Facebook Pixel Code -->
@@ -49,9 +48,6 @@
           <option value="productC">Product C</option>
           <option value="productD">Product D</option>
         </select>
-
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
-
         
         <button type="button" id="addToCartButton">Add to Cart</button>
 
@@ -100,19 +96,7 @@
                 value: 50.00,
                 currency: 'USD',
                 user_name: name
-            });
-
-            // //Custom Event
-            // fbq('track', 'OrderCreated', {
-            //     content_name: 'Test Product',
-            //     content_category: 'Example Category',
-            //     content_ids: [product],
-            //     content_type: 'product',
-            //     value: 50.00,
-            //     currency: 'USD',
-            //     order_id: '1122334455',
-            //     user_name: name
-            // });            
+            });         
         });        
         
     </script>
