@@ -27,11 +27,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     fbq('init', '36402296501972');
     fbq('track', 'PageView');
     </script> -->
-    <noscript>
-<!--         <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=36402296501972&ev=PageView&noscript=1"
-    />-->
-    </noscript> 
     <!-- End Meta Pixel Code -->
 </head>
 <body>
@@ -52,15 +47,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <label for="phone">Phone Number:</label>
         <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
 
-        <label for="product">Product SKU:</label>        
+        <label for="product">Product :</label>        
         <select name="product" id="product">
-          <option value="AUTO">AUTO</option>
-          <option value="productB">Product B</option>
-          <option value="productC">Product C</option>
-          <option value="productD">Product D</option>
+          <option value="TOYS">TOYS</option>
+          <option value="MOBILE">MOBILE</option>
+          <option value="ACCESSORIES">ACCESSORIES</option>
         </select>
         
-        <button type="button" id="purchase">Purchase</button>
+        <button type="button" id="purchase" data-gtm="purchase_button">Purchase</button>
     </form>
 
     <!-- JavaScript to trigger the addToCart event -->
@@ -74,16 +68,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             if (!name || !email) {
                 alert('Please enter both your name and email.');
                 return;
-            }
-            
+            }            
 
-            // Trigger Facebook Pixel AddToCart event with user data
-            fbq('track', 'Purchase', {
-                content_ids: [product],
-                value: 50.00,
-                currency: 'USD',
-                user_name: name
-            });         
+            // // Trigger Facebook Pixel AddToCart event with user data
+            // fbq('track', 'Purchase', {
+            //     content_ids: [product],
+            //     value: 50.00,
+            //     currency: 'USD',
+            //     user_name: name
+            // });         
         });        
         
     </script>
