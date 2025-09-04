@@ -47,6 +47,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <label for="phone">Phone Number:</label>
         <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
 
+        <label for="phone">Event Id:</label>
+        <input type="text" id="eid" name="eid" placeholder="event id"><br><br>
+
+        
         <label for="product">Product :</label>        
         <select name="product" id="product">
           <option value="TOYS">TOYS</option>
@@ -64,6 +68,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const product = document.getElementById('product').value;
+            const eventId = document.getElementById('eid').value;
 
             if (!name || !email) {
                 alert('Please enter both your name and email.');
@@ -76,9 +81,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 value: 50.00,
                 currency: 'USD',
                 user_name: name
-            }, {eventID: 'purchase.123456'});
+            }, {eventID: 'purchase-'+eventId});
         });        
-        
     </script>
 </body>
 </html>
